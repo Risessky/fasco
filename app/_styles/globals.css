@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .jasem {
+    color: red;
+  }
+
+
+
+
+
+
+
+
+}
+
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+  --font-volkhov: 'Volkhov', serif;
+}
