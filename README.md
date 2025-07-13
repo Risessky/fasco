@@ -1,9 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 
-hi im risesky
 
 ## Getting Started
+hi im risesky
 
 First, run the development server:
 

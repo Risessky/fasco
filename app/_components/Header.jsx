@@ -27,7 +27,7 @@ function Header() {
   }, [isOpen]);
 
   return (
-    <header className="container mx-auto flex items-center justify-between mt-[70px] px-4 relative max-sm:px-10">
+    <header className="container mx-auto flex items-center justify-between mt-[70px] px-4 relative max-sm:px-10 max-md:mt-10">
       <Link href="/" className="text-[52px] max-sm:text-3xl text-grayDark font-volkhov">
         FASCO
       </Link>
