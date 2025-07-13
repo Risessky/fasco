@@ -21,7 +21,14 @@ body {
 }
 
 @layer utilities {
+  .jasem{
+    color: red;
+  }
+
+
   .text-balance {
     text-wrap: balance;
   }
+
+
 }

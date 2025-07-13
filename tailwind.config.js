@@ -12,7 +12,8 @@ module.exports = {
         volkhov: ['var(--font-volkhov)', 'serif'],
       },
       colors : {
-        navbar : "#484848"
+        grayLight: '#E0E0E0', 
+        grayDark: '#484848', 
       }
     },
   },

@@ -1,7 +1,8 @@
-import Image from "next/image";
+import Showcase from "@/app/_components/Showcase";
 
 export default function Home() {
   return (
-   <h1 className="font-volkhov font-bold">hello </h1>
+    // <h1></h1>
+   <Showcase/>
   );
 }
