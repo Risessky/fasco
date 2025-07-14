@@ -8,7 +8,7 @@ import Link from "next/link";
 function Showcase() {
   return (
     <section
-      className="container mx-auto mt-[70px] mb-10 grid grid-cols-[1fr_35%_1fr] gap-[35px] max-xl:gap-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-0 "
+      className="container mx-auto mt-[140px] mb-10 grid grid-cols-[1fr_35%_1fr] gap-[35px] max-xl:gap-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-0 max-sm:mt-24"
       aria-label="Showcase of latest fashion sale"
     >
       {/* ستون اول */}
