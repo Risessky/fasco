@@ -1,7 +1,7 @@
 import Showcase from "@/app/_components/Showcase";
 import Logos from "./_components/Logos";
 import DealsOfTheMonth from "./_components/DealsOfTheMonth";
-import Arrivals from "./_components/Arrivals";
+// import Arrivals from "./_components/Arrivals";
 import PeakyBlinders from "./_components/PeakyBlinders";
 
 export default function Home() {

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-"incomplete"
+// "incomplete"
 function ProductItem({product}) {
 const {id,category,name,views,price,discount,starRating,imgUrl} =product
 
