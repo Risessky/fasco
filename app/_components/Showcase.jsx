@@ -4,6 +4,7 @@ import image2 from "@/public/images/man-header2.png";
 import image3 from "@/public/images/women-header1.png";
 import image4 from "@/public/images/women-header2.png";
 import Link from "next/link";
+import Button from "./Button";
 
 function Showcase() {
   return (
@@ -54,12 +55,7 @@ function Showcase() {
           <p className="text-grayDark text-[20px] text-center">
             NEW COLLECTION
           </p>
-          <Link
-            href="/"
-            className="text-[12px] mt-4 mb-3 text-white bg-black w-[152px] h-[56px] flex justify-center items-center rounded-[10px] shadow-[0_20px_35px_0_rgba(0,0,0,0.15)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
-          >
-            SHOP NOW
-          </Link>
+          <Button href="" styles="mt-4 mb-3">SHOP NOW</Button>
         </div>
 
         <div className="relative bg-[#B5786E] rounded-[10px]">

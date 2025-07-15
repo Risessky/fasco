@@ -14,15 +14,25 @@
   }
 }
 
+@font-face {
+  font-family: 'Digital-7';
+  src: url('/fonts/digital-7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 @layer utilities {
   .jasem{
     color: red;
+    position: static;
   }
 
 

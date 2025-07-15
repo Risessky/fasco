@@ -31,10 +31,14 @@ function Header() {
   useEffect(() => {
     function handleScroll() {
       const currentScrollY = window.scrollY;
+
+      
+      setIsOpen(false);
+
       if (currentScrollY > lastScrollY.current) {
-        setShowHeader(false); // اسکرول به پایین
+        setShowHeader(false);
       } else {
-        setShowHeader(true);  // اسکرول به بالا
+        setShowHeader(true);  
       }
       lastScrollY.current = currentScrollY;
     }
