@@ -15,7 +15,7 @@ function PeakyBlinders() {
         </h2>
         <p className="text-gray2 max-w-[515px] max-xl:text-sm max-md:mx-auto">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, nisi
-          provident perferendis, eligendi tempore rerum voluptatem velit, quas
+          provident perferendis, eligendi tempore rerum voluptatem velit, quas ji
           
           quaerat porro.
         </p>
