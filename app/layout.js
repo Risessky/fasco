@@ -2,6 +2,7 @@
   import "@/app/_styles/globals.css";
   import { Poppins, Volkhov } from 'next/font/google'
   import Header from "./_components/Header";
+import Footer from "./_components/Footer";
 
   const poppins = Poppins({
     subsets: ['latin'],
@@ -27,6 +28,7 @@
         <body className="font-sans bg-white text-gray-900">
           <Header/>
           {children}
+          <Footer/>
         </body>
       </html>
     )

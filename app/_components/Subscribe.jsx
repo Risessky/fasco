@@ -9,7 +9,7 @@ function Subscribe() {
             <div className="relative">
                 <Image src={subscribe1} alt="" className="object-cover"/>
             </div>
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-6 max-sm:gap-2">
                 <h2 className="font-volkhov text-[46px] max-w-[631px] text-center text-grayDark font-bold max-md:text-[22px]">Subscribe To Our Newsletter</h2>
                 <p className="text-gray max-w-[614px] text-center max-md:text-[14px]">Subscribe to our newsletter for the latest updates, special offers, new arrivals, and exclusive style tips delivered weekly.</p>
                 <SubscribeForm/>
