@@ -5,6 +5,7 @@ import DealsOfTheMonth from "./_components/DealsOfTheMonth";
 import PeakyBlinders from "./_components/PeakyBlinders";
 import Benefits from "./_components/Benefits";
 import FollowUS from "./_components/FollowUS";
+import Subscribe from "./_components/Subscribe";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <PeakyBlinders/>
       <Benefits/>
       <FollowUS/>
+      <Subscribe/>
     </main>
   );
 }
