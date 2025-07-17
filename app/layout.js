@@ -3,6 +3,7 @@
   import { Poppins, Volkhov } from 'next/font/google'
   import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+import Subscribe from "./_components/Subscribe";
 
   const poppins = Poppins({
     subsets: ['latin'],
@@ -28,6 +29,7 @@ import Footer from "./_components/Footer";
         <body className="font-sans bg-white text-gray-900">
           <Header/>
           {children}
+          <Subscribe/>
           <Footer/>
         </body>
       </html>

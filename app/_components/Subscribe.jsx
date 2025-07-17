@@ -7,7 +7,7 @@ function Subscribe() {
     return (
         <section className="container mx-auto pb-16 flex justify-around items-center max-md:px-3">
             <div className="relative">
-                <Image src={subscribe1} alt="" className="object-cover"/>
+                <Image src={subscribe1} alt="" className="object-cover" placeholder="blur"/>
             </div>
             <div className="flex flex-col items-center gap-6 max-sm:gap-2">
                 <h2 className="font-volkhov text-[46px] max-w-[631px] text-center text-grayDark font-bold max-md:text-[22px]">Subscribe To Our Newsletter</h2>

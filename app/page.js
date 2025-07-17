@@ -1,23 +1,21 @@
 import Showcase from "@/app/_components/Showcase";
-import Logos from "./_components/Logos";
-import DealsOfTheMonth from "./_components/DealsOfTheMonth";
-// import Arrivals from "./_components/Arrivals";
-import PeakyBlinders from "./_components/PeakyBlinders";
+import Arrivals from "./_components/Arrivals";
 import Benefits from "./_components/Benefits";
+import DealsOfTheMonth from "./_components/DealsOfTheMonth";
 import FollowUS from "./_components/FollowUS";
-import Subscribe from "./_components/Subscribe";
+import Logos from "./_components/Logos";
+import PeakyBlinders from "./_components/PeakyBlinders";
 
-export default function Home() {
+export default function Page() {
   return (
     <main>
       <Showcase />
       <Logos />
       <DealsOfTheMonth />
-      {/* <Arrivals/> */}
+      <Arrivals/>
       <PeakyBlinders/>
       <Benefits/>
       <FollowUS/>
-      <Subscribe/>
     </main>
   );
 }
