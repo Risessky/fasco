@@ -21,10 +21,17 @@ function Arrivals({ filter }) {
 
         <ArrivalsFilter />
 
-        <Suspense fallback={ <div className="mt-32">
-              <p className="text-[32px] text-grayDark mb-[50px]">loading product data please wait ...</p>
+        <Suspense
+          fallback={
+            <div className="mt-32">
+              <p className="text-[32px] text-grayDark mb-[50px] max-md:text-[22px] max-sm:text-[16px]">
+                loading product data please wait ...
+              </p>
               <Spinner />
-            </div>} key={filter}>
+            </div>
+          }
+          key={filter}
+        >
           <ProductsList filter={filter} />
         </Suspense>
       </div>
@@ -33,4 +40,3 @@ function Arrivals({ filter }) {
 }
 
 export default Arrivals;
-

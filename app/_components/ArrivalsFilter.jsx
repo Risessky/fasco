@@ -16,7 +16,7 @@ function ArrivalsFilter() {
   }
 
   return (
-    <div className="flex justify-between items-center mt-8 px-[62.5px] w-full">
+    <div className="flex justify-between items-center mt-8 px-[62.5px] w-full max-sm:px-5">
       <Button
         filter="men"
         handleFilter={handleFilter}
@@ -45,7 +45,7 @@ function ArrivalsFilter() {
 function Button({ filter, handleFilter, activeFilter, children }) {
   return (
     <button
-      className={`text-[15px] text-gray bg-grayLight w-[152px] h-[56px] flex justify-center items-center rounded-[10px] shadow-[0_20px_35px_0_rgba(0,0,0,0.15)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black  ${
+      className={`text-[15px] max-sm:text-sm text-gray bg-grayLight w-[152px] max-sm:w-[100px] max-sm:h-[49px] h-[56px] flex justify-center items-center rounded-[10px] shadow-[0_20px_35px_0_rgba(0,0,0,0.15)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black  ${
         filter === activeFilter ? "text-white !bg-black" : ""
       }`}
       onClick={() => handleFilter(filter)}
