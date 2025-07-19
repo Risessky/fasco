@@ -6,13 +6,16 @@ import FollowUS from "./_components/FollowUS";
 import Logos from "./_components/Logos";
 import PeakyBlinders from "./_components/PeakyBlinders";
 
-export default function Page() {
+export default function Page({ searchParams }) {
+const filter = searchParams?.category ?? "women"
+console.log(filter)
+
   return (
     <main>
       <Showcase />
       <Logos />
       <DealsOfTheMonth />
-      <Arrivals/>
+      <Arrivals filter={filter}/>
       <PeakyBlinders/>
       <Benefits/>
       <FollowUS/>

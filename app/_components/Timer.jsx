@@ -29,25 +29,25 @@ function Timer() {
         <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital">
           {String(days).padStart(2, "0")}
         </div>
-        <span className="text-xl">Days</span>
+        <span className="text-[32px]">Days</span>
       </div>
       <div className="flex flex-col gap-2 justify-between items-center">
         <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital">
           {String(hours).padStart(2, "0")}
         </div>
-        <span className="text-xl">Hr</span>
+        <span className="text-[32px]">Hr</span>
       </div>
       <div className="flex flex-col gap-2 justify-between items-center">
         <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital">
           {String(minutes).padStart(2, "0")}
         </div>
-        <span className="text-xl">Mins</span>
+        <span className="text-[32px]">Mins</span>
       </div>
       <div className="flex flex-col gap-2 justify-between items-center">
         <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital">
           {String(seconds).padStart(2, "0")}
         </div>
-        <span className="text-xl">Sec</span>
+        <span className="text-[32px]">Sec</span>
       </div>
     </div>
   );

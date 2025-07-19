@@ -13,8 +13,10 @@ function ProductItem({ product }) {
     views = "0",
     price = 0,
     discount = 0,
-    starRating = 0,
+    star_rating = "3",
     describtion = "",
+    img_url="",
+    size = "m",
   } = product;
 
   const totalPrice = (price * (100 - discount)) / 100;
@@ -30,7 +32,7 @@ function ProductItem({ product }) {
       className="rounded-[10px] p-4 bg-white shadow-[0_20px_35px_0_rgba(0,0,0,0.1)]"
     >
       <div className="relative w-[336px] h-[244px] max-w-full rounded-[10px] overflow-hidden">
-        <Image src={image1} alt={name} fill className="object-cover" />
+        <Image src={img_url} alt={name} fill className="object-cover object-top" />
         {discount > 0 && (
           <span className="absolute bottom-8 left-0 text-2xl font-semibold text-red-700 transform rotate-[-45deg]">
             %{discount} OFF
@@ -40,7 +42,7 @@ function ProductItem({ product }) {
 
       <div className="flex justify-between items-center pt-3">
         <h3 className="text-[20px] text-grayDark">{name}</h3>
-        <StarRating rating={starRating} />
+        <StarRating rating={star_rating} />
       </div>
 
       {descriptionPreview && (
@@ -48,7 +50,7 @@ function ProductItem({ product }) {
       )}
 
       <p className="text-[12px] text-grayDark">
-        ({views}) customer Reviews
+        ({views})k customer Reviews
       </p>
 
       <div className="flex justify-between items-center pt-4">
