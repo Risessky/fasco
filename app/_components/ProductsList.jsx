@@ -6,7 +6,7 @@ import ProductItem from "./ProductItem";
 
 async function ProductsList({ filter }) {
   const products = await getProducts();
-  console.log(products)
+  // console.log(products)
   // console.log(filter)
 
   if (!products.length) return null;

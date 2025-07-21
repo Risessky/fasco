@@ -8,7 +8,7 @@ import PeakyBlinders from "./_components/PeakyBlinders";
 
 export default function Page({ searchParams }) {
 const filter = searchParams?.category ?? "women"
-console.log(filter)
+// console.log(filter)
 
   return (
     <main>

@@ -50,7 +50,7 @@ function Header() {
   return (
     <header
       className={`
-        fixed top-0 left-0 w-full z-50 bg-white transition-transform duration-300
+        fixed top-0  left-0 w-full z-50 bg-white transition-transform duration-300
         ${showHeader ? "translate-y-0" : "-translate-y-full"}
       `}
     >
@@ -90,7 +90,7 @@ function Header() {
           `}
         >
           <Link href="/" className="text-grayDark" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link href="/" className="text-grayDark" onClick={() => setIsOpen(false)}>Shop</Link>
+          <Link href="/shop" className="text-grayDark" onClick={() => setIsOpen(false)}>Shop</Link>
           <Link href="/" className="text-grayDark" onClick={() => setIsOpen(false)}>Cart</Link>
           <Link
             href="/"

@@ -55,7 +55,7 @@ function Showcase() {
           <p className="text-grayDark text-[20px] text-center">
             NEW COLLECTION
           </p>
-          <Button href="" styles="mt-4 mb-3">SHOP NOW</Button>
+          <Button href="shop" styles="mt-4 mb-3">SHOP NOW</Button>
         </div>
 
         <div className="relative bg-[#B5786E] rounded-[10px]">
