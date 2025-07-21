@@ -18,7 +18,7 @@ function page({ searchParams }) {
         <ShopHeader />
 
         <Suspense
-          //  key={JSON.stringify({ size, price })}
+           key={JSON.stringify({ size, price })}
           fallback={
             <div className="my-32">
               <p className="text-[32px] text-center text-grayDark mb-[50px] max-md:text-[22px] max-sm:text-[16px]">

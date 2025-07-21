@@ -13,7 +13,7 @@ function ShopItem({ shopItem }) {
 
   return (
     <Link
-      href="/shop"
+      href={`/shop/${id}`}
       className="p-[12px] bg-white shadow-[0_20px_35px_0_rgba(0,0,0,0.05)] max-sm:w-[90%] max-sm:flex max-sm:justify-between"
     >
       <div className="relative w-[302px] h-[403px] max-lg:w-[250px] max-lg:h-[340px] max-sm:order-2 max-sm:w-[130px] max-sm:h-[170px]">

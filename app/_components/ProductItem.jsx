@@ -9,6 +9,7 @@ function ProductItem({ product }) {
   if (!product) return null; 
 
   const {
+    id=1,
     name = "Unnamed Product",
     views = "0",
     price = 0,
@@ -28,7 +29,7 @@ function ProductItem({ product }) {
 
   return (
     <Link
-      href="#"
+      href={`/shop/${id}`}
       className="rounded-[10px] p-4 bg-white shadow-[0_20px_35px_0_rgba(0,0,0,0.1)]"
     >
       <div className="relative w-[336px] h-[244px] max-w-full rounded-[10px] overflow-hidden">

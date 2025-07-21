@@ -28,3 +28,23 @@ export const getShop = async function () {
   return data;
 };
 
+
+export async function getProduct(id) {
+  const { data, error } = await supabase
+    .from("products")
+    .select("id,name,views,price,discount,star_rating,describtion,size,img_url")
+    .eq("id", id)
+    .single();
+
+  // For testing
+  // await new Promise((res) => setTimeout(res, 1000));
+
+  if (error) {
+    console.error(error);
+    notFound();
+  }
+
+  return data;
+}
+
+

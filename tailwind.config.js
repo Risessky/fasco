@@ -20,7 +20,13 @@ module.exports = {
         grayLight: '#E0E0E0',
         gray:"#8A8A8A", 
         gray2:"#767676", 
-        grayDark: '#484848', 
+        gray3:"#666666",
+        grayDark: '#484848',
+        red:"#DA3F3F" ,
+        lightPink:"#FDEFEE",
+        darkPink:"#FF706B",
+        pink:"#F8CCCC"
+
       },
        backgroundImage: {
         'white-to-lightgray': 'linear-gradient(to bottom, #FFFFFF, #FAFAFA)',

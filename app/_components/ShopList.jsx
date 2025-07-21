@@ -4,6 +4,7 @@ import ShopItem from "./ShopItem";
 
 async function ShopList({ size, price }) {
   const shopList = await getShop();
+  // console.log(shopList)
 
   if (!shopList?.length) return null;
 
