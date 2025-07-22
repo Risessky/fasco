@@ -1,8 +1,8 @@
-function ShopHeader() {
+function PageHeader({title,pagePara}) {
     return (
         <div className="mb-[80px]">
-        <h1 className="font-volkhov text-[42px] text-center text-black font-semibold">
-          Fashion
+        <h1 className="font-volkhov text-[42px] max-md:text-[32px] text-center text-black font-semibold">
+          {title}
         </h1>
 
         <nav className="text-[15px] text-black mt-4" aria-label="Breadcrumb">
@@ -15,11 +15,11 @@ function ShopHeader() {
             <li>
               <span className="mx-1">{">"}</span>
             </li>
-            <li className="text-gray-900 font-medium">Fashion</li>
+            <li className="text-gray-900 font-medium">{pagePara}</li>
           </ol>
         </nav>
       </div>
     )
 }
 
-export default ShopHeader
+export default PageHeader

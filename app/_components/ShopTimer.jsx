@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 
 function ShopTimer() {
-  // شروع با 6 ساعت (21600 ثانیه)
   const [timeLeft, setTimeLeft] = useState(6 * 60 * 60-1223);
 
   useEffect(() => {
@@ -13,7 +12,6 @@ function ShopTimer() {
     return () => clearInterval(timer);
   }, []);
 
-  // تبدیل ثانیه به hh:mm:ss
   const formatTime = (seconds) => {
     const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
     const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");

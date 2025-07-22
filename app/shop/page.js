@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import ShopFilter from "../_components/ShopFilter";
 import ShopList from "../_components/ShopList";
 import Spinner from "../_components/Spinner";
-import ShopHeader from "../_components/ShopHeader";
+import PageHeader from "../_components/PageHeader";
 import FollowUS from "../_components/FollowUS";
 import Benefits from "../_components/Benefits";
 import PeakyBlinders from "../_components/PeakyBlinders";
@@ -15,7 +15,7 @@ function page({ searchParams }) {
   return (
     <>
       <section className="mt-[140px]">
-        <ShopHeader />
+        <PageHeader title="Fashion" pagePara="Fashion"/>
 
         <Suspense
            key={JSON.stringify({ size, price })}

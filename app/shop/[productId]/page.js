@@ -5,7 +5,7 @@ import PeakyBlinders from "@/app/_components/PeakyBlinders";
 import ProductCounter from "@/app/_components/ProductCounter";
 import ShopTimer from "@/app/_components/ShopTimer";
 import StarRating from "@/app/_components/StarRating";
-import ScrollToTop from "@/app/_hooks/ScrollToTop ";
+import ScrollToTop from "@/app/_components/ScrollToTop ";
 import { getProduct, getProducts } from "@/app/_lib/data-service";
 import Image from "next/image";
 
@@ -43,10 +43,11 @@ async function page({params}) {
         >
           <Image
             src={img_url}
-            alt=""
+            alt={name}
             fill
             className="object-cover rounded-md"
           />
+        
         </div>
         <div className="max-sm:justify-self-center">
           <span className="text-gray3 font-volkhov text-[14px] block mb-1 max-lg:mb-0">
@@ -77,8 +78,8 @@ async function page({params}) {
           </div>
          <ShopTimer/>
 
-          <p className="text-gray3 mt-8 max-md:text-[14 px]">
-            only {id + 2} items left in stock
+          <p className="text-gray3 mt-8 max-md:text-[14px]">
+            only {id} items left in stock
           </p>
           <div className="flex justify-start items-center gap-2 mt-10 mb-4 max-md:mt-5 max-md:mb-2">
             <p className="font-volkhov text-black font-bold ">size :</p>
@@ -92,7 +93,7 @@ async function page({params}) {
               <div
                 key={sizeValue}
                 className={`flex items-center justify-center w-12 h-12 text-black border rounded-[5px] border-grayLight ${
-                  sizeValue === size.toUpperCase() && "bg-black text-white"
+                  sizeValue === size?.toUpperCase() && "bg-black text-white"
                 }`}
               >
                 <p className="">{sizeValue}</p>
