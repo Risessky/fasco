@@ -23,7 +23,7 @@ function SigninButton() {
                   d="M43.6 20.5H42V20H24v8h11.3C34.5 31 29.6 35 24 35c-5.3 0-9.9-3.3-11.6-8l-6.6 4.8C8.5 37.1 15.7 42 24 42c8.3 0 15.3-5.4 17.6-12.9.4-1.2.6-2.4.6-3.6 0-1.2-.1-2.3-.4-3.5z"
                 />
               </svg>
-              <span className="text-sm md:text-base">Sign up with Google</span>
+              <span className="text-sm md:text-base max-md:text-black">Sign up with Google</span>
             </button>
     )
 }

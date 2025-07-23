@@ -37,21 +37,21 @@ export default function Page() {
       </section>
 
       {/* mobile version */}
-      <div className="md:hidden">
-        <div className="relative w-[80vw] h-[90vh]">
+      <div className="md:hidden overflow-hidden">
+        <div className="relative w-[90vw] h-[80vh]">
           <Image src={login} alt="login" fill className="object-cover" />
 
-          <div className="absolute bg-white backdrop-blur-[5px] shadow-[0_5px_20px_rgba(0,0,0,0.4)] bg-opacity-50 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex flex-col gap-5 px-6 py-10">
-            <h1 className="font-volkhov text-[66px] mb-20  max-md:text-[30px]">
+          <div className="absolute rounded-lg bg-white backdrop-blur-[5px] shadow-[0_5px_20px_rgba(0,0,0,0.4)] bg-opacity-50 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex flex-col gap-2 px-6 py-10">
+            <h1 className="font-volkhov text-[66px] mb-10  max-md:text-[30px]">
               FASCO
             </h1>
-            <p className="font-volkhov text-[30px]  max-md:text-[16px]">
+            <p className="font-volkhov text-[30px] mb-3 max-md:text-[16px]">
               Sign Up or Sign In To FASCO
             </p>
             <SigninButton />
             <div className="flex items-center gap-3 justify-center">
               <div className="w-[30px] h-[5px] bg-gray max-md:h-[3px]"></div>
-              <span className="text-[30px] font-bold text-gray my-10 max-md:text-[16px]">
+              <span className="text-[30px] font-bold text-gray my-5 max-md:text-[16px]">
                 or
               </span>
               <div className="w-[30px] h-[5px] bg-gray max-md:h-[3px]"></div>

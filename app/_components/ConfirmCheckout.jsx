@@ -25,7 +25,7 @@ function ConfirmCheckout() {
           </p>
         </div>
 
-        <Button styles="w-full">Checkout</Button>
+        <Button href="/checkout" styles="w-full">Checkout</Button>
       </div>
     </div>
   );

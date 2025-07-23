@@ -10,7 +10,7 @@ async function page() {
   const x = await getProduct(13);
   const y = await getProduct(5);
   const cartItems = [x, y];
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <>
