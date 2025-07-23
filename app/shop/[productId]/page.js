@@ -8,6 +8,9 @@ import StarRating from "@/app/_components/StarRating";
 import ScrollToTop from "@/app/_components/ScrollToTop ";
 import { getProduct, getProducts } from "@/app/_lib/data-service";
 import Image from "next/image";
+import Header from "@/app/_components/Header";
+import Subscribe from "@/app/_components/Subscribe";
+import Footer from "@/app/_components/Footer";
 
 export const revalidate = 3600;
 
@@ -36,6 +39,7 @@ async function page({params}) {
 
   return (
     <>
+    <Header/>
     <ScrollToTop/>
       <section className="container mx-auto grid grid-cols-2  justify-center gap-16 items-center mt-[140px] mb-[100px] max-lg:gap-8 max-sm:grid-cols-1 ">
         <div
@@ -113,6 +117,8 @@ async function page({params}) {
       <PeakyBlinders/>
       <Benefits/>
       <DealsOfTheMonth title="People Also Loved"/>
+      <Subscribe/>
+          <Footer/>
     </>
   );
 }

@@ -6,6 +6,9 @@ import PageHeader from "../_components/PageHeader";
 import FollowUS from "../_components/FollowUS";
 import Benefits from "../_components/Benefits";
 import PeakyBlinders from "../_components/PeakyBlinders";
+import Header from "../_components/Header";
+import Footer from "../_components/Footer";
+import Subscribe from "../_components/Subscribe";
 
 function page({ searchParams }) {
   const size = searchParams?.size ?? "all";
@@ -14,6 +17,7 @@ function page({ searchParams }) {
 
   return (
     <>
+    <Header/>
       <section className="mt-[140px]">
         <PageHeader title="Fashion" pagePara="Fashion"/>
 
@@ -38,6 +42,8 @@ function page({ searchParams }) {
 
       <Benefits />
       <FollowUS />
+      <Subscribe/>
+          <Footer/>
     </>
   );
 }

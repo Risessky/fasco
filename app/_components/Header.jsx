@@ -93,7 +93,7 @@ function Header() {
           <Link href="/shop" className="text-grayDark" onClick={() => setIsOpen(false)}>Shop</Link>
           <Link href="/cart" className="text-grayDark" onClick={() => setIsOpen(false)}>Cart</Link>
           <Link
-            href="/"
+            href="/login"
             className="text-white bg-black w-[152px] h-[56px] flex justify-center items-center rounded-[10px] shadow-[0_20px_35px_0_rgba(0,0,0,0.15)]"
             onClick={() => setIsOpen(false)}
           >
