@@ -1,12 +1,12 @@
 
 
 import Image from "next/image"
-import MiniCounter from "./MiniCounter";
 
 function CartItem({ cartItem, isMobile = false }) {
-  const { id, name, price, discount, size, img_url } = cartItem;
+  const { id, name, price, discount, size, img_url ,quantity} = cartItem;
   const imageHeightClass = id >= 9 ? "aspect-[3/4]" : "aspect-[4/3]";
-  const totalPrice = (price * (100 - discount)) / 100;
+  const totalPrice = (price * (100 - discount)) / 100 * quantity;
+  const finalPrice =(price * (100 - discount)) / 100 
 
   if (isMobile) {
     return (
@@ -28,11 +28,11 @@ function CartItem({ cartItem, isMobile = false }) {
         <div className="flex justify-between text-sm font-medium text-gray">
           <div>
             <p>Price</p>
-            <p>${price.toFixed(2)}</p>
+            <p>${finalPrice.toFixed(2)}</p>
           </div>
           <div>
-            <p>Quantity</p>
-            <MiniCounter />
+            <p >Quantity</p>
+            <p className="text-center">{quantity}</p>
           </div>
           <div>
             <p>Total</p>
@@ -66,9 +66,9 @@ function CartItem({ cartItem, isMobile = false }) {
 
 
       
-      <td className="py-8 font-volkhov text-[22px] align-top">${price.toFixed(2)}</td>
+      <td className="py-8 font-volkhov text-[22px] align-top">${finalPrice.toFixed(2)}</td>
       <td className="py-8 align-top">
-        <MiniCounter />
+        <p className="pl-5 text-[20px]">{quantity}</p>
       </td>
       <td className="py-8 font-volkhov text-[22px] align-top">${totalPrice.toFixed(2)}</td>
     </tr>
@@ -78,39 +78,3 @@ function CartItem({ cartItem, isMobile = false }) {
 
 export default CartItem
 
-
-// import Image from "next/image"
-// import MiniCounter from "./MiniCounter";
-
-// function CartItem({cartItem}) {
-// const {id,name,price,discount,size,img_url}=cartItem
-
-
-//  const imageHeightClass = id >= 9 ? "aspect-[3/4] " : "aspect-[4/3]";
-// const totalPrice = (price * (100 - discount)) / 100;
-//     return (
-//         <tr key={id} className=" border-b border-gray ">
-//             <td className="py-8">
-//             <div className="flex gap-5">
-//                 <div className={`relative w-[168px] ${imageHeightClass}`}>
-//                     <Image src={img_url} alt={name} fill className="object-cover"/>
-//                 </div>
-//                 <div className="flex flex-col gap-3 items-start">
-//                     <p className="font-volkhov text-[22px] ">{name}</p>
-//                     <div className="flex gap-2 text-gray text-[22px]">
-//                         <p>size :</p>
-//                         <p>{size.toUpperCase()}</p>
-//                     </div>
-//                     <button className=" text-gray text-[22px] underline hover:text-grayDark">Remove</button>
-//                 </div>
-//             </div>
-
-//             </td>
-//             <td className="py-8 font-volkhov text-[22px] align-top">${price.toFixed(2)}</td>
-//             <td className="py-8 align-top"><MiniCounter/></td>
-//             <td className="py-8 font-volkhov text-[22px] align-top">${totalPrice.toFixed(2)}</td>
-//           </tr>
-//     )
-// }
-
-// export default CartItem

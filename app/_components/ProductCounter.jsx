@@ -19,6 +19,7 @@ export default function ProductCounter() {
   return (
     <div className="flex items-center">
       <button
+      type="button"
         onClick={decrement}
         disabled={count <= 1}
         className={`${buttonBaseClasses} border-grayLight ${
@@ -35,6 +36,7 @@ export default function ProductCounter() {
       </div>
 
       <button
+      type="button"
         onClick={increment}
         disabled={count >= 3}
         className={`${buttonBaseClasses} border-grayLight ${
@@ -45,6 +47,7 @@ export default function ProductCounter() {
       >
         +
       </button>
+      <input type="hidden" name="quantity" value={count} />
     </div>
   );
 }

@@ -3,19 +3,21 @@ import Arrivals from "./_components/Arrivals";
 import Benefits from "./_components/Benefits";
 import DealsOfTheMonth from "./_components/DealsOfTheMonth";
 import FollowUS from "./_components/FollowUS";
+import Footer from "./_components/Footer";
+import Header from "./_components/Header";
 import Logos from "./_components/Logos";
 import PeakyBlinders from "./_components/PeakyBlinders";
-import Header from "./_components/Header";
-import Footer from "./_components/Footer";
 import Subscribe from "./_components/Subscribe";
+import { auth } from "./_lib/auth";
 
-export default function Page({ searchParams }) {
+export default async function Page({ searchParams }) {
   const filter = searchParams?.category ?? "women";
-  // console.log(filter)
+const  session =await auth()
+console.log(session)
 
   return (
     <>
-      <Header />
+      <Header/>
       <main>
         <Showcase />
         <Logos />

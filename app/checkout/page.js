@@ -15,7 +15,7 @@ async function page() {
       <Header />
 
 
-      <section className="border-b border-gray pb-10">
+      <section className="border-b border-gray pb-10 mb-24">
         <h1 className="text-[42px] font-volkhov text-center mt-[160px] mb-6 max-md:text-[30px]">
           Fasco Checkout
         </h1>

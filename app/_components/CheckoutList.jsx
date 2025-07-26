@@ -4,12 +4,12 @@ import CheckItem from "./CheckItem";
 
 async function CheckoutList() {
   const x = await getProduct(13);
-  const checkList = [x, x, x, x, x, x, x];
-  console.log(x);
+  const checkList = [x, x];
+  // console.log(x);
 
   return (
     <section className="bg-grayLight w-full ">
-      <ul className="mt-10 max-h-[600px] overflow-scroll overflow-x-hidden">
+      <ul className="mt-10 max-h-[600px] overflow-y-auto overflow-x-hidden">
         {checkList.map(itemData=><CheckItem key={itemData.id} itemData={itemData}/>)}
       </ul>
       <div className="w-[60%] mx-auto mt-7">

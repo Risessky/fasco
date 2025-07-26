@@ -3,7 +3,24 @@ import login from "@/public/images/login.jpg";
 import Button from "../_components/Button";
 import SigninButton from "../_components/SigninButton";
 
-export default function Page() {
+
+
+export default function Page({ searchParams }) {
+  const callbackUrl = searchParams?.callbackUrl;
+
+  let pathname = "";
+  if (callbackUrl) {
+    try {
+      const url = new URL(callbackUrl);
+      pathname = url.pathname.replace("/", ""); 
+    } catch (err) {
+      pathname = "";
+    }
+  }
+
+  // console.log(pathname); 
+
+
   return (
     <div className="h-screen w-screen flex items-center justify-center">
       <section className="max-md:hidden grid grid-cols-1 md:grid-cols-2 w-[80%] h-[90vh] border  border-[#DBDBDB] rounded-e-xl">
@@ -19,7 +36,7 @@ export default function Page() {
             <p className="font-volkhov text-[30px] max-lg:text-[20px]">
               Sign Up or Sign In To FASCO
             </p>
-            <SigninButton />
+            <SigninButton pathname={pathname}/>
             <div className="flex items-center gap-3 justify-center">
               <div className="w-[30px] h-[5px] bg-gray max-lg:h-[3px]"></div>
               <span className="text-[30px] font-bold text-gray my-10 max-lg:text-[20px]">

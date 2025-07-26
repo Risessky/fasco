@@ -1,5 +1,6 @@
 import "@/app/_styles/globals.css";
 import { Poppins, Volkhov } from "next/font/google";
+import { AuthProvider } from "./_components/AuthProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,7 +22,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${volkhov.variable}`}>
-      <body className="font-sans bg-white text-gray-900">{children}</body>
+      <body className="font-sans bg-white text-gray-900">
+       <AuthProvider>
+        
+        {children}
+        </AuthProvider> 
+        
+        </body>
     </html>
   );
 }

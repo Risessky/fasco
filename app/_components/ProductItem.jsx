@@ -35,7 +35,7 @@ function ProductItem({ product }) {
       <div className="relative w-[336px] h-[244px] max-w-full rounded-[10px] overflow-hidden">
         <Image src={img_url} alt={name} fill className="object-cover object-top" />
         {discount > 0 && (
-          <span className="absolute bottom-8 left-0 text-2xl font-semibold text-red-700 transform rotate-[-45deg]">
+          <span className="absolute bottom-8 left-0 text-2xl font-semibold text-red transform rotate-[-45deg]">
             %{discount} OFF
           </span>
         )}
