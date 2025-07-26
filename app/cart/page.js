@@ -8,11 +8,14 @@ import Subscribe from "../_components/Subscribe";
 
 async function page() {
   const orders= await getOrders()
- const cartItems = orders.map(({ id, product, quantity }) => ({
+ const cartItems = orders.map(({ id, checked,product, quantity }) => ({
   ...product,
+  checked,
   quantity,
   orderId: id,
 }));
+// console.log(cartItems)
+
 
 const orderId=cartItems[0]?.orderId
 const totalPrice = (cartItems[0]?.price * (100 - cartItems[0]?.discount)) / 100 * cartItems[0]?.quantity;
@@ -21,11 +24,13 @@ const totalPrice = (cartItems[0]?.price * (100 - cartItems[0]?.discount)) / 100 
   // const quantity=orders.map(order=>order.quantity)
   // console.log(quantity)
   // console.log(orderId)
-  console.log(orders)
+  // console.log(orders)
   // console.log(cartItems)
   // console.log(totalPrice)
+  // console.log(isChecked)
  
   const isEmpty = !cartItems || cartItems.length === 0;
+  const isChecked = cartItems?.[0]?.checked === true;
 
   return (
     <>
@@ -33,7 +38,7 @@ const totalPrice = (cartItems[0]?.price * (100 - cartItems[0]?.discount)) / 100 
       <section className="my-[140px]">
         <PageHeader title="Shopping Cart" pagePara="Your Shopping Cart" />
         <CartList cartItems={cartItems} />
-       {!isEmpty && <ConfirmCheckout orderId={orderId} totalPrice={totalPrice}/>}
+       {!isEmpty && !isChecked &&<ConfirmCheckout orderId={orderId} totalPrice={totalPrice}/>}
       </section>
       <Subscribe />
       <Footer />

@@ -5,6 +5,52 @@ import { auth, signIn } from "./auth";
 import { supabase } from "./supabase";
 import { revalidatePath } from "next/cache";
 
+
+export async function pay(formData) {
+   const session = await auth();
+  if (!session) throw new Error("You must be logged in");
+
+const country = formData.get("country");
+const firstName = formData.get("firstName");
+const lastName = formData.get("lastName");
+const address = formData.get("address");
+const city = formData.get("city");
+const postalCode = formData.get("postalCode");
+const orderId = formData.get("orderId");
+const totalPrice = formData.get("totalPrice");
+const saveInfo = formData.get("saveInfo")=== "on";
+
+const name = `${firstName} ${lastName}`.trim();
+
+// console.log(country,firstName,lastName,address,city,postalCode,saveInfo,orderId)
+
+const updates={country,address,city,postal_code:postalCode,show_data:saveInfo,name}
+
+  const { error } = await supabase
+    .from("guests")
+    .update(updates)
+    .eq("id", session.user.guestId);
+
+     if (error) throw new Error("could not be payed");
+
+ const { error:orderError } = await supabase
+    .from("orders")
+    .update({payed:true,checked:false,total_price:Number(totalPrice)+40})
+    .eq("id", orderId);
+
+  if (orderError) throw new Error("order could not be updated");
+
+  revalidatePath("/cart")
+  revalidatePath("/checkout")
+  revalidatePath("/accout")
+
+redirect("/account")
+}
+
+
+
+
+
 export async function checkout(formData) {
   const session = await auth();
   if (!session) throw new Error("You must be logged in");
@@ -24,7 +70,7 @@ export async function checkout(formData) {
     .update(updates)
     .eq("id", orderId);
 
-  if (error) throw new Error("Total price could not be updated");
+  if (error) throw new Error(" could not be updated");
 
   revalidatePath("/checkout");
   revalidatePath("/cart");

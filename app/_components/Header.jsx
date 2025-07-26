@@ -138,7 +138,7 @@ function Header() {
 
           {session?.user?.image && session.user.name ? (
             <Link
-              href=""
+              href="/account"
               className="flex items-center gap-3 bg-grayLight px-4 py-2 rounded-[50px]"
             >
               <div className="relative rounded-full w-10 h-10">

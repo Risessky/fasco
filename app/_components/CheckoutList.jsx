@@ -1,21 +1,19 @@
-import Image from "next/image";
-import { getProduct } from "../_lib/data-service";
 import CheckItem from "./CheckItem";
 
-async function CheckoutList() {
-  const x = await getProduct(13);
-  const checkList = [x, x];
-  // console.log(x);
+async function CheckoutList({cartItems}) {
+ const totalPrice=cartItems[0].total_price
+ console.log(totalPrice)
+
 
   return (
     <section className="bg-grayLight w-full ">
       <ul className="mt-10 max-h-[600px] overflow-y-auto overflow-x-hidden">
-        {checkList.map(itemData=><CheckItem key={itemData.id} itemData={itemData}/>)}
+        {cartItems.map(itemData=><CheckItem key={itemData.id} itemData={itemData}/>)}
       </ul>
       <div className="w-[60%] mx-auto mt-7">
       <div className="flex justify-between items-center text-grayDark text-[16px]">
         <p>Subtotal</p>
-        <p>$100.00</p>
+        <p>${totalPrice.toFixed(2)}</p>
       </div>
       <div className="flex justify-between mt-2 items-center text-grayDark text-[16px]">
         <p>Shipping</p>
@@ -23,7 +21,7 @@ async function CheckoutList() {
       </div>
       <div className="flex justify-between mt-2 items-center text-grayDark text-[16px]">
         <p>Total</p>
-        <p className="text-black font-semibold">$140.00</p>
+        <p className="text-black font-semibold">${(Number(totalPrice)+40).toFixed(2)}</p>
       </div></div>
     </section>
   );
