@@ -1,55 +1,88 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { auth, signIn } from "./auth";
+import { auth, signIn, signOut } from "./auth";
 import { supabase } from "./supabase";
 import { revalidatePath } from "next/cache";
+import { getUserOrders } from "./data-service";
 
-
-export async function pay(formData) {
-   const session = await auth();
+export async function deleteOrder(orderId) {
+  const session = await auth();
   if (!session) throw new Error("You must be logged in");
 
-const country = formData.get("country");
-const firstName = formData.get("firstName");
-const lastName = formData.get("lastName");
-const address = formData.get("address");
-const city = formData.get("city");
-const postalCode = formData.get("postalCode");
-const orderId = formData.get("orderId");
-const totalPrice = formData.get("totalPrice");
-const saveInfo = formData.get("saveInfo")=== "on";
+const userOrders =await getUserOrders()
+const userOrderIds = userOrders.map((order) => order.id);
+// console.log(userOrderIds)
+// console.log(orderId)
 
-const name = `${firstName} ${lastName}`.trim();
+ if (!userOrderIds.includes(orderId)) {
+    throw new Error("You are not allowed to delete this order.");
+  }
 
-// console.log(country,firstName,lastName,address,city,postalCode,saveInfo,orderId)
+   const { error } = await supabase
+    .from("orders")
+    .delete()
+    .eq("id", orderId);
 
-const updates={country,address,city,postal_code:postalCode,show_data:saveInfo,name}
+  if (error) {
+    throw new Error("Order could not be deleted.");
+  }
+
+  revalidatePath("/account");   
+
+}
+
+export async function pay(formData) {
+  const session = await auth();
+  if (!session) throw new Error("You must be logged in");
+
+  const country = formData.get("country");
+  const firstName = formData.get("firstName");
+  const lastName = formData.get("lastName");
+  const address = formData.get("address");
+  const city = formData.get("city");
+  const postalCode = formData.get("postalCode");
+  const orderId = formData.get("orderId");
+  const totalPrice = formData.get("totalPrice");
+  const saveInfo = formData.get("saveInfo") === "on";
+
+  const name = `${firstName} ${lastName}`.trim();
+
+  // console.log(country,firstName,lastName,address,city,postalCode,saveInfo,orderId)
+
+  const updates = {
+    country,
+    address,
+    city,
+    postal_code: postalCode,
+    show_data: saveInfo,
+    name,
+  };
 
   const { error } = await supabase
     .from("guests")
     .update(updates)
     .eq("id", session.user.guestId);
 
-     if (error) throw new Error("could not be payed");
+  if (error) throw new Error("could not be payed");
 
- const { error:orderError } = await supabase
+  const { error: orderError } = await supabase
     .from("orders")
-    .update({payed:true,checked:false,total_price:Number(totalPrice)+40})
+    .update({
+      payed: true,
+      checked: false,
+      total_price: Number(totalPrice) + 40,
+    })
     .eq("id", orderId);
 
   if (orderError) throw new Error("order could not be updated");
 
-  revalidatePath("/cart")
-  revalidatePath("/checkout")
-  revalidatePath("/accout")
+  revalidatePath("/cart");
+  revalidatePath("/checkout");
+  revalidatePath("/accout");
 
-redirect("/account")
+  redirect("/account");
 }
-
-
-
-
 
 export async function checkout(formData) {
   const session = await auth();
@@ -76,12 +109,6 @@ export async function checkout(formData) {
   revalidatePath("/cart");
   redirect("/checkout");
 }
-
-
-
-
-
-
 
 export async function AddToCart(formData) {
   const session = await auth();
@@ -142,5 +169,5 @@ export async function signInAction(formData) {
 }
 
 export async function signOutAction() {
-  await signIn({ redirectTo: "/" });
+  await signOut({ redirectTo: "/" });
 }

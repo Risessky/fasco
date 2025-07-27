@@ -1,6 +1,7 @@
 import Button from "../_components/Button";
 import CheckoutForm from "../_components/CheckoutForm";
 import CheckoutList from "../_components/CheckoutList";
+import DeleteOrderButton from "../_components/DeleteOrder";
 import Footer from "../_components/Footer";
 import Header from "../_components/Header";
 import Subscribe from "../_components/Subscribe";
@@ -51,6 +52,7 @@ async function page() {
             <div className="container mx-auto grid grid-cols-2 max-sm:grid-cols-1">
               <CheckoutForm orderId={orderId} totalPrice={totalPrice}/>
               <CheckoutList cartItems={cartItems} />
+              <div className="my-6"><DeleteOrderButton orderId={orderId}/></div>
             </div>
           </>
         )}
