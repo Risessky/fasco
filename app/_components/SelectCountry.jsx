@@ -1,6 +1,6 @@
 import { getCountries } from "../_lib/data-service";
 
-async function SelectCountry() {
+async function SelectCountry({country,show_data}) {
   const countries = await getCountries();
 
   if (!countries || countries.length === 0) return null;
@@ -10,7 +10,7 @@ async function SelectCountry() {
       name="country"
       id="country"
       required
-      defaultValue=""
+      defaultValue={show_data ? country : ""}
       className="w-full border text-gray border-gray h-[71px] pl-5"
     >
       <option value="" disabled>

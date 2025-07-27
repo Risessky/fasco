@@ -1,17 +1,17 @@
-"use client";
+  "use client";
 
-import { useFormStatus } from "react-dom";
+  import { useFormStatus } from "react-dom";
 
-export default function SubmitButton({ children, pendingLabel,styles }) {
-  const { pending } = useFormStatus();
+  export default function SubmitButton({ children, pendingLabel,styles }) {
+    const { pending } = useFormStatus();
 
-  return (
-    <button
-    type="submit"
-      className={styles}
-      disabled={pending}
-    >
-      {pending ? pendingLabel : children}
-    </button>
-  );
-}
+    return (
+      <button
+      type="submit"
+        className={styles}
+        disabled={pending}
+      >
+        {pending ? pendingLabel : children}
+      </button>
+    );
+  }

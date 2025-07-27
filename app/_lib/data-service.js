@@ -132,3 +132,22 @@ export async function getCountries() {
     throw new Error("Could not fetch countries");
   }
 }
+
+
+export async function getGuestById(id) {
+  const session = await auth();
+  if (!session) throw new Error("You must be logged in");
+
+  const { data, error } = await supabase
+    .from("guests")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  // موثت
+  if (error) {
+    console.error("Error fetching guest:", error);
+  }
+
+  return data;
+}

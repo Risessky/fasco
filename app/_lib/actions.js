@@ -110,12 +110,15 @@ export async function checkout(formData) {
   redirect("/checkout");
 }
 
-export async function AddToCart(formData) {
-  const session = await auth();
-  if (!session) throw new Error("You must be logged in");
+  export async function AddToCart(formData) {
+    const product_id = Number(formData.get("product_id"));
+    const session = await auth();
+    if (!session) {
+    console.error("You must be logged in");
+    redirect(`/shop/${product_id}?error=login`); 
+  }
 
   const quantity = Number(formData.get("quantity") ?? 1);
-  const product_id = Number(formData.get("product_id"));
 
   const { data: existingOrder, error: checkError } = await supabase
     .from("orders")
@@ -129,8 +132,8 @@ export async function AddToCart(formData) {
   }
 
   if (existingOrder) {
-    throw new Error(" sorry! You can just order one item");
-    // or  redirect("/cart")
+     console.error("sorry! You can just order one item");
+    redirect(`/shop/${product_id}?error=oneItem`); 
   }
 
   const { data: product, error: productError } = await supabase

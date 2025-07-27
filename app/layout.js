@@ -1,6 +1,7 @@
 import "@/app/_styles/globals.css";
 import { Poppins, Volkhov } from "next/font/google";
 import { AuthProvider } from "./_components/AuthProvider";
+import ToasterProvider from "./_components/ToasterProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
        <AuthProvider>
         
         {children}
+         <ToasterProvider />
         </AuthProvider> 
         
         </body>
