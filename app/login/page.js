@@ -2,6 +2,7 @@ import Image from "next/image";
 import login from "@/public/images/login.jpg";
 import Button from "../_components/Button";
 import SigninButton from "../_components/SigninButton";
+import FadeLogin from "../_components/FadeLogin";
 
 
 
@@ -24,9 +25,14 @@ export default function Page({ searchParams }) {
   return (
     <div className="h-screen w-screen flex items-center justify-center">
       <section className="max-md:hidden grid grid-cols-1 md:grid-cols-2 w-[80%] h-[90vh] border  border-[#DBDBDB] rounded-e-xl">
+       
+       
+       <FadeLogin>
+
         <div className="relative w-full h-full">
           <Image src={login} alt="login" fill className="object-cover" placeholder="blur" />
         </div>
+       </FadeLogin>
 
         <div className="relative flex items-center justify-center">
           <div className="flex flex-col gap-5">
@@ -55,6 +61,9 @@ export default function Page({ searchParams }) {
 
       {/* mobile version */}
       <div className="md:hidden overflow-hidden">
+      
+
+       
         <div className="relative w-[90vw] h-[80vh]">
           <Image src={login} alt="login" fill className="object-cover" />
 
@@ -79,6 +88,7 @@ export default function Page({ searchParams }) {
             FASCO Terms & Codnitions
           </p>
         </div>
+        
       </div>
     </div>
   );
