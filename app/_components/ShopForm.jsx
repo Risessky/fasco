@@ -24,7 +24,7 @@ function ShopForm({ product }) {
   return (
     <>
     <ErrorToastOnRedirect/>
-      <form action={AddToCart} className="max-sm:justify-self-center">
+      <form action={AddToCart} className="max-sm:justify-self-center max-sm:w-[80%]">
         <span className="text-gray3 font-volkhov text-[14px] block mb-1 max-lg:mb-0">
           Fasco
         </span>
