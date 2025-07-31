@@ -4,13 +4,26 @@ import CartItem from "./CartItem";
 function CartList({ cartItems }) {
   const isEmpty = !cartItems || cartItems.length === 0;
   const isChecked = cartItems?.[0]?.checked === true;
+  const isPayed = cartItems?.[0]?.payed === true;
 
   return (
     <div className="container mx-auto w-full max-md:w-[90%] overflow-x-auto">
-      {isEmpty ? (
+      {isPayed ? (
+        <div className="flex flex-col items-center ">
+          <p className="text-center py-10 text-gray">
+            You paid a product check it in your account.
+          </p>
+          <Button href="/account"> go to your account</Button>
+        </div>
+      ) : isEmpty ? (
         <p className="text-center py-10 text-gray">Your cart is empty.</p>
       ) : isChecked ? (
-      <div className="flex flex-col items-center ">  <p className="text-center py-10 text-gray">You have already checked out. </p> <Button href="/checkout"> go to check out</Button></div>
+        <div className="flex flex-col items-center ">
+          <p className="text-center py-10 text-gray">
+            You have already checked out.
+          </p>
+          <Button href="/checkout"> go to check out</Button>
+        </div>
       ) : (
         <>
           {/* Desktop version */}
@@ -45,10 +58,6 @@ function CartList({ cartItems }) {
 }
 
 export default CartList;
-
-
-
-
 
 // import CartItem from "./CartItem";
 

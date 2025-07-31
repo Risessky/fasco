@@ -23,7 +23,7 @@ export default function Page({ searchParams }) {
 
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center">
+    <div className="h-screen w-screen flex items-center justify-center ">
       <section className="max-md:hidden grid grid-cols-1 md:grid-cols-2 w-[80%] h-[90vh] border  border-[#DBDBDB] rounded-e-xl">
        
        

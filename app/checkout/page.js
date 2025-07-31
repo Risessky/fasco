@@ -10,8 +10,9 @@ import { getOrders, getProduct } from "../_lib/data-service";
 async function page() {
   const orders = await getOrders();
   const cartItems = orders.map(
-    ({ id, total_price, checked, product, quantity }) => ({
+    ({ id, total_price, checked, product, quantity,payed }) => ({
       ...product,
+      payed,
       checked,
       quantity,
       total_price,
@@ -21,6 +22,7 @@ async function page() {
 
   const orderId =cartItems[0]?.orderId
   const totalPrice =cartItems[0]?.total_price
+  const isPayed = cartItems?.[0]?.payed === true;
   // console.log(cartItems)
   // console.log(orderId)
 
@@ -36,7 +38,18 @@ async function page() {
           Fasco Checkout
         </h1>
 
-        {isEmpty ? (
+        {
+        isPayed ? (
+        <div className="flex flex-col items-center  py-16">
+          <p className="text-center py-10 text-gray">
+            You paid a product check it in your account.
+          </p>
+          <Button href="/account"> go to your account</Button>
+        </div>
+      )
+        
+        
+        :isEmpty ? (
           <p className="text-center py-10 text-gray text-[22px] my-32">your cart is empty ! </p>
         ) : !isChecked ? 
         (
