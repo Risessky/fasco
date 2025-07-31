@@ -6,6 +6,35 @@ import Header from "../_components/Header";
 import Footer from "../_components/Footer";
 import Subscribe from "../_components/Subscribe";
 
+
+export const metadata = {
+  title: "Your Cart | Fasco",
+  description:
+    "Review the items in your cart and proceed to checkout. Get the best deals on fashion and lifestyle products at Fasco.",
+  keywords: [
+    "fasco cart",
+    "shopping cart",
+    "checkout",
+    "order review",
+    "buy clothes online",
+    "ecommerce cart",
+    "online fashion store",
+    "fashion checkout",
+    "cart page",
+    "Fasco shop",
+  ],
+  openGraph: {
+    title: "Your Cart | Fasco",
+    description:
+      "Check what's in your cart before completing your purchase. Stylish fashion products just a click away.",
+    url: "https://fasco-shops.vercel.app/cart",
+    siteName: "Fasco",
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+
 async function page() {
   const orders = await getOrders();
   const cartItems = orders.map(({ id, checked, product, quantity, payed }) => ({

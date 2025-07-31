@@ -7,6 +7,37 @@ import Header from "../_components/Header";
 import Subscribe from "../_components/Subscribe";
 import { getOrders, getProduct } from "../_lib/data-service";
 
+
+export const metadata = {
+  title: "Checkout | Fasco",
+  description:
+    "Secure and fast checkout at Fasco. Complete your purchase and enjoy trendy fashion delivered to your doorstep.",
+  keywords: [
+    "fasco checkout",
+    "secure checkout",
+    "fashion order",
+    "buy online",
+    "place order",
+    "ecommerce checkout",
+    "fashion payment",
+    "final step shopping",
+    "lifestyle checkout",
+    "Fasco shop",
+  ],
+  openGraph: {
+    title: "Checkout | Fasco",
+    description:
+      "Complete your fashion purchase securely and quickly at Fasco. Shop with confidence and enjoy fast delivery.",
+    url: "https://fasco-shops.vercel.app/checkout",
+    siteName: "Fasco",
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+
+
+
 async function page() {
   const orders = await getOrders();
   const cartItems = orders.map(

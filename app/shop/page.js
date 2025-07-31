@@ -10,6 +10,36 @@ import Header from "../_components/Header";
 import Footer from "../_components/Footer";
 import Subscribe from "../_components/Subscribe";
 
+
+export const metadata = {
+  title: "Shop | Fasco – Discover the Latest Fashion & Lifestyle Products",
+  description:
+    "Browse Fasco’s curated collection of modern fashion, clothing, and lifestyle products. Enjoy great deals, stylish picks, and fast shipping – all in one place.",
+  keywords: [
+    "fasco shop",
+    "fashion products",
+    "clothing store",
+    "online fashion",
+    "lifestyle products",
+    "trendy outfits",
+    "buy clothes online",
+    "modern fashion",
+    "shop fasco",
+    "fashion deals",
+  ],
+  openGraph: {
+    title: "Shop | Fasco – Discover the Latest Fashion & Lifestyle Products",
+    description:
+      "Explore Fasco’s shop for stylish clothing and lifestyle items. Great prices, fresh trends, and fast delivery await.",
+    url: "https://fasco-shops.vercel.app/shop",
+    siteName: "Fasco",
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+
+
 function page({ searchParams }) {
   const size = searchParams?.size ?? "all";
   const price = searchParams?.price ?? "all";

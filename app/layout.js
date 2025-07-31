@@ -16,8 +16,30 @@ const volkhov = Volkhov({
 });
 
 export const metadata = {
-  title: "My Shop",
-  description: "A sample e-commerce site built with Next.js and Tailwind CSS",
+  title: "Fasco | Modern Fashion & Lifestyle Shop",
+  description:
+    "Discover the latest trends in fashion, clothing, and accessories at Fasco. Enjoy exclusive discounts, fast delivery, and premium quality products — all in one place.",
+  keywords: [
+    "fasco",
+    "online shop",
+    "ecommerce",
+    "fashion store",
+    "clothing",
+    "trendy outfits",
+    "lifestyle products",
+    "discount fashion",
+    "buy clothes online",
+    "modern style",
+  ],
+  openGraph: {
+    title: "Fasco | Modern Fashion & Lifestyle Shop",
+    description:
+      "Shop trendy clothes and lifestyle items at Fasco. Great prices, fast shipping, and stylish options for everyone.",
+    url: "https://fasco-shops.vercel.app/",
+    siteName: "Fasco",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {

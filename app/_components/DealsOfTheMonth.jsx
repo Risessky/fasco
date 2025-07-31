@@ -9,6 +9,9 @@ function DealsOfTheMonth({title="Deals Of The Month"}) {
     <section className="bg-white-to-lightgray flex flex-col lg:flex-row justify-between items-center gap-12 py-16 px-6 lg:px-32 mx-auto overflow-hidden">
       <div className="flex flex-col gap-6 max-w-xl max-md:justify-center max-md:items-center ">
         <TrackingText>
+        <h1 className="font-volkhov text-grayDark text-4xl sm:text-4xl lg:text-[46px] uppercase mb-3">
+          fasco
+        </h1>
         <h2 className="font-volkhov text-grayDark text-3xl sm:text-4xl lg:text-[46px]">
           {title}
         </h2>
