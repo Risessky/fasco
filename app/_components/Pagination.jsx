@@ -5,7 +5,7 @@ function Pagination({ onPrev, onNext, disablePrev, disableNext }) {
         <button
           onClick={onPrev}
           disabled={disablePrev}
-          className={`w-12 h-12 rounded-full bg-gray-300 hover:bg-gray-400 shadow-[0_0_15px_rgba(0,0,0,0.3)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 ${
+          className={`w-12 h-12 rounded-full bg-gray-300 hover:bg-grayLight text-black shadow-[0_0_15px_rgba(0,0,0,0.3)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 ${
             disablePrev ? "opacity-50 cursor-not-allowed hover:bg-gray-300" : ""
           }`}
           aria-label="Previous page"
@@ -15,7 +15,7 @@ function Pagination({ onPrev, onNext, disablePrev, disableNext }) {
         <button
           onClick={onNext}
           disabled={disableNext}
-          className={`w-12 h-12 rounded-full bg-gray-300 hover:bg-gray-400 shadow-[0_0_15px_rgba(0,0,0,0.3)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 ${
+          className={`w-12 h-12 rounded-full bg-gray-300 hover:bg-grayLight text-black shadow-[0_0_15px_rgba(0,0,0,0.3)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 ${
             disableNext ? "opacity-50 cursor-not-allowed hover:bg-gray-300" : ""
           }`}
           aria-label="Next page"

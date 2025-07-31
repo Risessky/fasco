@@ -30,15 +30,15 @@ function ShopTimer() {
         <span className="text-[20px] max-lg:text-[16px] font-semibold text-darkPink">
           00
         </span>
-        <span>:</span>
+        <span className="text-rose-950 font-bold"> :</span>
         <span className="text-[20px] max-lg:text-[16px] font-semibold text-darkPink">
           {h}
         </span>
-        <span>:</span>
+        <span className="text-rose-950 font-bold"> :</span>
         <span className="text-[20px] max-lg:text-[16px] font-semibold text-darkPink">
           {m}
         </span>
-        <span>:</span>
+        <span className="text-rose-950 font-bold"> :</span>
         <span className="text-[20px] max-lg:text-[16px] font-semibold text-darkPink">
           {s}
         </span>

@@ -26,28 +26,28 @@ function Timer() {
   return (
     <div className="flex flex-nowrap gap-3 text-3xl">
       <div className="flex flex-col gap-2 justify-between items-center">
-        <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital">
+        <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital text-grayDark">
           {String(days).padStart(2, "0")}
         </div>
-        <span className="text-[32px]">Days</span>
+        <span className="text-[32px] text-grayDark">Days</span>
       </div>
       <div className="flex flex-col gap-2 justify-between items-center">
-        <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital">
+        <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital text-grayDark">
           {String(hours).padStart(2, "0")}
         </div>
-        <span className="text-[32px]">Hr</span>
+        <span className="text-[32px] text-grayDark">Hr</span>
       </div>
       <div className="flex flex-col gap-2 justify-between items-center">
-        <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital">
+        <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital text-grayDark">
           {String(minutes).padStart(2, "0")}
         </div>
-        <span className="text-[32px]">Mins</span>
+        <span className="text-[32px] text-grayDark">Mins</span>
       </div>
       <div className="flex flex-col gap-2 justify-between items-center">
-        <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital">
+        <div className="w-[76px] h-[76px] border-2 border-grayLight rounded-[10px] shadow-2xl flex justify-center items-center font-digital text-grayDark">
           {String(seconds).padStart(2, "0")}
         </div>
-        <span className="text-[32px]">Sec</span>
+        <span className="text-[32px] text-grayDark">Sec</span>
       </div>
     </div>
   );
