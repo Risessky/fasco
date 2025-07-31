@@ -24,14 +24,14 @@ export default function ProductCounter() {
         disabled={count <= 1}
         className={`${buttonBaseClasses} border-grayLight ${
           count <= 1
-            ? "bg-graytext-grayDark text-grayDark cursor-not-allowed"
+            ? "bg-grayLight  text-black cursor-not-allowed"
             : "hover:bg-grayLight cursor-pointer"
         }`}
       >
         -
       </button>
 
-      <div className="w-12 h-12 flex items-center justify-center border border-grayLight text-xl">
+      <div className="w-12 h-12 flex items-center justify-center border border-grayLight text-xl text-black">
         {count}
       </div>
 
@@ -41,7 +41,7 @@ export default function ProductCounter() {
         disabled={count >= 3}
         className={`${buttonBaseClasses} border-grayLight ${
           count >= 3
-            ? "bg-graytext-grayDark text-grayDark cursor-not-allowed"
+            ? "bg-grayLight text-black cursor-not-allowed"
             : "hover:bg-grayLight cursor-pointer"
         }`}
       >
