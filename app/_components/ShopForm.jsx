@@ -73,7 +73,7 @@ function ShopForm({ product }) {
             <div
               key={sizeValue}
               className={`flex items-center justify-center w-12 h-12 text-black border rounded-[5px] border-grayLight ${
-                sizeValue === size?.toUpperCase() && "bg-black text-white"
+                sizeValue === size?.toUpperCase() && "bg-black text-white "
               }`}
             >
               <p className="">{sizeValue}</p>
@@ -86,9 +86,9 @@ function ShopForm({ product }) {
           <ProductCounter />
           <SubmitButton
             pendingLabel="adding to your cart..."
-            styles="border max-w-[442px] w-full p-[10px] font-volkhov max-xl:max-w-[300px]"
+            styles="border max-w-[442px] w-full p-[10px] font-volkhov max-xl:max-w-[300px] text-grayDark"
           >
-            Add to Cart{" "}
+            Add to Cart
           </SubmitButton>
 
           <input type="hidden" name="product_id" value={id}></input>

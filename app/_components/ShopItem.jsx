@@ -28,7 +28,7 @@ function ShopItem({ shopItem }) {
       <div className="max-sm:flex max-sm:flex-col max-sm:justify-around px-4">
         <div>
           <p className="text-black font-volkhov mt-5">{name}</p>
-          <p>{descriptionPreview}</p>
+          <p className="text-grayDark">{descriptionPreview}</p>
         </div>
 
         <div className="flex justify-between items-start mt-3">

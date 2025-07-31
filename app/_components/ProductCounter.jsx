@@ -24,8 +24,8 @@ export default function ProductCounter() {
         disabled={count <= 1}
         className={`${buttonBaseClasses} border-grayLight ${
           count <= 1
-            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-            : "hover:bg-gray-100 cursor-pointer"
+            ? "bg-graytext-grayDark text-grayDark cursor-not-allowed"
+            : "hover:bg-grayLight cursor-pointer"
         }`}
       >
         -
@@ -41,8 +41,8 @@ export default function ProductCounter() {
         disabled={count >= 3}
         className={`${buttonBaseClasses} border-grayLight ${
           count >= 3
-            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-            : "hover:bg-gray-100 cursor-pointer"
+            ? "bg-graytext-grayDark text-grayDark cursor-not-allowed"
+            : "hover:bg-grayLight cursor-pointer"
         }`}
       >
         +
